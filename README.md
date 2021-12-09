@@ -34,7 +34,9 @@ this interface will allow you to get the shortest path distance between 2 nodes,
 We can also check if the current graph is strongly connected, get it's center and do TSP on a given list of citites.
 This interface will also allow you to load graph data from a JSON file, or if you create a graph your self , you will be able to save this graph into a JSON file as well.
 
-Note: I added my own class which is called pair 
+Note: I added my own class which is called Pair which hold  the values,(index,distance) index of the node we currently travel with , and the distance we made with it so far.
+I created this class to use it in our priority queue which is being used in the Dijkstra algorithm, we pull items form the priority queue by the smallest distance available in the queue, and this being done by the comparator, in the Pair class.
+
 Explaining the algorithms:
 
 Center:					 	
