@@ -24,6 +24,8 @@ EdgeData interface: gives us information about the edge, since it's a directed g
 
 GeoLocation interface: gives us information about the location of the node in the graph, (x,y,z).
 
+We added a GUI class in which we implement the drawing of the menu and graph.
+
 DirectedWeightedGraph interface: this interface allows us to add new nodes to the graph with existed edges, we can also add new edges to the graph if we want. Just like adding we can also remove edges and nodes, we can get nodes by their ID's also get edges by entering their source node and destination node. You can algo get an iterator for all of the edges of the graph, all of the nodes of the graph, or all of the edges of a specific node. We have a variable called MC which keeps track with changes made to the graph , so when creating the iterator a change in the graph has occured, a RunTime error will be thrown. You can also get the amount of nodes and edges in the graph.
 
 Note: Getting a edge, adding a node, adding or removing a edge from the graph, are done in O(1) complexity, removing a node from the graph is done in O(K) complexity , when 
