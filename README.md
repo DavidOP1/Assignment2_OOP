@@ -56,7 +56,35 @@ then we reverse all of the edges of the graph and create a new graph , we run DF
 TSP(Travelling salesman problem):
 We are given a list of cities which we need to visit, between every 2 pairs of cities , I run the function ShortestPath and since it returnes the shortest route between those 2 cities, I add it to the list which I need to return at the end.
 
-Time Results:
+Time Results:(Everything tested in Junit5)
+
+Loading from json:
+
+1000 nodes 9000 edges: 125 ms
+
+10000 nodes 90000 edges: 410 ms
+
+100000 nodes 900000 edges: 4 sec 954 ms
+
+
+Checking if a graph is connected:
+
+1000 nodes 9000 edges: 157 ms
+
+10000 nodes 90000 edges: 517 ms
+
+100000 nodes 900000 edges: 6 sec 551 ms
+
+Checking center of graph:
+
+1000 nodes 9000 edges: 1 sec 748 ms
+
+10000 nodes 90000 edges: 3 minutes 37 sec
+
+100000 nodes 900000 edges: timeout
+
+
+
 
 
 
