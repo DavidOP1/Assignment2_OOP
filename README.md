@@ -44,14 +44,18 @@ Explaining the algorithms:
 Center:	
 
 since my ShortestPathDist function creates a hashtable which stores the shortest distance between the src node to each node in the graph, we will only take the biggest shortest distance in that list. we do this to every node in a given graph , and then taking the smallest biggest shortest distance out of all them.
+We created a function called maxDistNode(Node.id) which receives nodes id as an argument, this function is completely identical to ShortestPathDist, the only difference that in here we return the whole list of shortest distances from entered node to each node in the graph.
 
 ShortestPathDist:  
 
-this function returns the shortest path between 2 nodes, in here we used the Dijkstra algorithm.
+this function returns the shortest path between 2 nodes, in here we used the Dijkstra algorithm. This function creates a list with all the shortest distances from the node to each node in the graph, so we take only the node with the id of dest.(node.id==dest).
 
 ShortestPath: 
 
 Works exactly the same as ShortestPathDist, but we always keep the parent node, so we can track and save the route.
+
+I created 2 of my own functions: assistShortest, which create a lists that stores all of the nodes of the route from end to beginning , then in our secojnd function findPath 
+we reverse this list and return it, and that's the list which ShortestPath returns.
 
 isConnected:
 
