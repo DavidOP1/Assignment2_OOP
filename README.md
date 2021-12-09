@@ -30,7 +30,7 @@ DirectedWeightedGraph interface: this interface allows us to add new nodes to th
 
 Note: Getting a edge, adding a node, adding or removing a edge from the graph, are done in O(1) complexity, removing a node from the graph is done in O(K) complexity , when 
 V.degree=k.
-
+--
 DirectedWeightedGraphsAlgorithms: this is the most important interface, in here we implement all of the algroithms which are being used in the graph.
 this interface will allow you to get the shortest path distance between 2 nodes, and get the routh which it takes to get to the node.
 We can also check if the current graph is strongly connected, get it's center and do TSP on a given list of citites.
@@ -38,28 +38,35 @@ This interface will also allow you to load graph data from a JSON file, or if yo
 
 Note: I added my own class which is called Pair which hold  the values,(index,distance) index of the node we currently travel with , and the distance we made with it so far.
 I created this class to use it in our priority queue which is being used in the Dijkstra algorithm, we pull items form the priority queue by the smallest distance available in the queue, and this being done by the comparator, in the Pair class.
-
+--
 Explaining the algorithms:
+--
+Center:	
 
-Center:					 	
 since my ShortestPathDist function creates a hashtable which stores the shortest distance between the src node to each node in the graph, we will only take the biggest shortest distance in that list. we do this to every node in a given graph , and then taking the smallest biggest shortest distance out of all them.
 
 ShortestPathDist:  
+
 this function returns the shortest path between 2 nodes, in here we used the Dijkstra algorithm.
 
 ShortestPath: 
+
 Works exactly the same as ShortestPathDist, but we always keep the parent node, so we can track and save the route.
 
 isConnected:
+
 We initialize a hashtable of visited nodes, saved by keys(ID's) of the node and the values are boolean.
 We run a DFS on the graph , and if all of the nodes are not visited , then the graph is not strongly connected. then we reset the hashtable of the visited nodes,
 then we reverse all of the edges of the graph and create a new graph , we run DFS on the newly created graph, and if all of the edges are not visited then the graph is not strongly connected, if both DFS's pass then the graph is strongly connected.
+For this function I created my own function DFS() which is implemented iteratively.
+
+Problems I had with isConnected is that at the beginning I did DFS recursively , The problem with this that when I ran the 10k node graph I got a stack overflow, th recursion implemntation of DFS used too much memory so I implemented DFS iteratively, which solved the problem.
 
 TSP(Travelling salesman problem):
 We are given a list of cities which we need to visit, between every 2 pairs of cities , I run the function ShortestPath and since it returnes the shortest route between those 2 cities, I add it to the list which I need to return at the end.
 
 Time Results:(Everything tested in Junit5)
-
+--
 Loading from json:
 
 1000 nodes 9000 edges: 125 ms
@@ -85,13 +92,15 @@ Checking center of graph:
 
 100000 nodes 900000 edges: timeout
 
+UML:
+--
+![WhatsApp Image 2021-12-09 at 14 49 49](https://user-images.githubusercontent.com/54214707/145421909-49b43e98-d0c7-422b-88f3-e06f86ecde9a.jpeg)
 
-
-
-
-
-
-
+Note:
+--
+ How to run the program using the jar:
+  Make sure you have the jar file and json  data file of the graph in the same directory, then in the cmd,
+  Type: java -jar Ex2.jar "json file name"
 
 
 
