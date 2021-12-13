@@ -79,7 +79,7 @@ Loading from json:
 
 100000 nodes 900000 edges: 4 sec 954 ms
 
-1000000 nodes 9000000 edges: 14 sec 346 ms
+1000000 nodes 9000000 edges: 16 sec 346 ms
 
 Checking if a graph is connected:
 
@@ -110,6 +110,11 @@ Note:
  How to run the program using the jar:
   Make sure you have the jar file and json  data file of the graph in the same directory, then in the cmd,
   Type: java -jar Ex2.jar "json file name"
+How to use the gui:
+In the screen opened there is a drop down menu on the left corner, file which will aloow you to load , save files or draw the graph.
 
+Edit button will allow you to add new edges , add new nodes or remove nodes and edges.
+
+Algorithm button will allow you any of the algorithms which we were requested to implement. (center,shortest path route and is the loaded graph connected).
 
 
