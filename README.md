@@ -79,6 +79,7 @@ Loading from json:
 
 100000 nodes 900000 edges: 4 sec 954 ms
 
+1000000 nodes 9000000 edges: 14 sec 346 ms
 
 Checking if a graph is connected:
 
@@ -88,6 +89,8 @@ Checking if a graph is connected:
 
 100000 nodes 900000 edges: 6 sec 551 ms
 
+1000000 nodes 9000000 edges: 18  sec 432 ms false result
+
 Checking center of graph:
 
 1000 nodes 9000 edges: 1 sec 748 ms
@@ -95,6 +98,8 @@ Checking center of graph:
 10000 nodes 90000 edges: 3 minutes 37 sec
 
 100000 nodes 900000 edges: timeout
+
+1000000 nodes 9000000 edges: timeout
 
 UML:
 --
